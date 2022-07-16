@@ -142,9 +142,18 @@ filegroup(
         ],
         exclude = [
             "**/* *", # Bazel does not support spaces in file names.
+            "bin/2to3*",
+            "bin/idle*",
+            # bundled wheels
+            "lib/**/ensurepip/**",
+            "lib/libpython{python_version}.so",
             # static libraries
             "lib/*.a",
             "lib/**/*.a",
+            "lib/**/lib2to3/**",
+            "lib/**/idlelib/**",
+            "lib/tk*/**",
+            "lib/tcl*/**",
             # tests for the standard libraries.
             "lib/**/test/**",
             "lib/**/tests/**",
